@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .left {
+        padding: 20px;
+      }
+
+      p {
+        border: 1px solid black;
+        padding: 5px;
+        text-align: center;
+        background-color: azure;
+        cursor: pointer;
+      }
+
+      .right {
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="left">
+        <div>
+          <h2>What is the capital of India?</h2>
+          <p onclick="correct()">Delhi</p>
+          <p onclick="wrong()">Mumbai</p>
+          <p onclick="wrong()">Kolkata</p>
+          <p onclick="wrong()">Chennai</p>
+        </div>
+        <div>
+          <h2>What is the capital of Pakistan?</h2>
+          <p onclick="wrong()">Kabul</p>
+          <p onclick="wrong()">Karachi</p>
+          <p onclick="correct()">Islambad</p>
+          <p onclick="wrong()">Lahore</p>
+        </div>
+        <div>
+          <h2>What is the capital of USA?</h2>
+          <p onclick="wrong()">New york</p>
+          <p onclick="wrong()">Utah</p>
+          <p onclick="correct()">Washington DC</p>
+          <p onclick="wrong()">Detriot</p>
+        </div>
+
+        <button onclick="submit()">Submit</button>
+      </div>
+      <div class="right">
+        <h2>Live Score : <span id="livescore">00</span></h2>
+
+        <h3>High Score: <span id="highscore">00</span></h3>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="./index.js"></script>
