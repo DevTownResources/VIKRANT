@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      #container > button,
+      input {
+        height: 50px;
+        width: 300px;
+        margin: 3px;
+      }
+      button {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <input type="text" placeholder="Enter amount" id="amount" />
+      <button onclick="transfer()">Transfer Money</button>
+    </div>
+  </body>
+</html>
+<script>
+  function transfer() {
+    let amount = document.getElementById("amount").value;
+    let DATE = new Date();
+    let day = DATE.getDay();
+    let month = DATE.getMonth();
+    let year = DATE.getFullYear();
+
+    let hour = DATE.getHours();
+    let minute = DATE.getMinutes();
+    let seconds = DATE.getSeconds();
+
+    let dateobj = {
+      date: `${day}/${month}/${year}`,
+      time: `${hour}:${minute}:${seconds}`,
+      amount: amount,
+    };
+
+    console.log(dateobj);
+  }
+</script>
