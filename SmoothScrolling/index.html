@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>smooth Scrolling</title>
+    <style>
+      #home,
+      #aboutus,
+      #contactus {
+        height: 500px;
+        width: 100%;
+        border: 1px solid black;
+        margin: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#home">home</a>
+    <a href="#aboutus">about us</a>
+    <a href="#contactus">contact us</a>
+
+    <div id="home">HOME</div>
+    <div id="aboutus">ABOUT US</div>
+    <div id="contactus">CONTACT US</div>
+
+    <a href="#home">home</a>
+    <a href="#aboutus">about us</a>
+    <a href="#contactus">contact us</a>
+  </body>
+</html>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
+</script>
