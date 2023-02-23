@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #grandfather {
+        background-color: aquamarine;
+      }
+
+      #father {
+        background-color: bisque;
+      }
+      #grandson {
+        background-color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="submit">
+      <button>submit</button>
+    </div>
+
+    <div id="grandfather">
+      grandfather
+      <div id="father">
+        father
+        <div id="grandson">grandson</div>
+      </div>
+    </div>
+    <a href="https://www.google.com">Google</a>
+  </body>
+</html>
+<script>
+  document.getElementById("submit").addEventListener("click", () => {
+    alert("Event is clicked");
+  });
+
+  document.getElementById("grandfather").addEventListener("click", () => {
+    alert("Event is grandfather");
+  });
+  document.getElementById("father").addEventListener("click", () => {
+    alert("Event is father");
+  });
+  document.getElementById("grandson").addEventListener("click", () => {
+    alert("Event is grandson");
+  });
+</script>

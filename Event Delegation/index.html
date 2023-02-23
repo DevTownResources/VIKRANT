@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      li {
+        font-size: 30px;
+        font-weight: bold;
+        list-style: none;
+        text-decoration: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      #section__1,
+      #section__2,
+      #section__3 {
+        height: 700px;
+        border: 1px solid black;
+        margin-bottom: 14px;
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        font-size: 35px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="container">
+      <li class="nav_items">
+        <a class="nav_links" href="#section__1">Home</a>
+      </li>
+      <li class="nav_items">
+        <a class="nav_links" href="#section__2">Services</a>
+      </li>
+      <li class="nav_items">
+        <a class="nav_links" href="#section__3">Footer</a>
+      </li>
+    </ul>
+
+    <div id="section__1">HOME</div>
+    <div id="section__2">SERVICES</div>
+    <div id="section__3">FOOTER</div>
+  </body>
+</html>
+<script>
+  //   document.querySelectorAll(".nav_links").forEach(function (e) {
+  //     e.addEventListener("click", function (el) {
+  //       el.preventDefault();
+
+  //       const id = this.getAttribute("href");
+  //       document.querySelector(id).scrollIntoView({
+  //         behavior: "smooth",
+  //       });
+  //     });
+  //   });
+
+  document.querySelector(".container").addEventListener("click", function (e) {
+    //console.log(e.target);
+
+    if (e.target.classList.contains("nav_links")) {
+      const id = e.target.getAttribute("href");
+      console.log(id);
+      document.querySelector(id).scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  });
+</script>
