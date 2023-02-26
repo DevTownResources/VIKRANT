@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sticky Navigation</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+
+      body {
+        height: 5000px;
+        background-color: blueviolet;
+      }
+
+      h1 {
+        margin-right: auto;
+        color: #fff;
+        font-size: 40px;
+      }
+
+      li,
+      a,
+      button {
+        font-weight: 500;
+        font-size: 19px;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        background: #1f253f;
+        transition: 1s;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 30px 10%;
+      }
+
+      ul {
+        list-style: none;
+        position: relative;
+      }
+
+      li {
+        display: inline-block;
+        padding: 0px 20px;
+      }
+
+      li a:hover {
+        color: aquamarine;
+        transition: 2s;
+      }
+
+      button {
+        padding: 9px 25px;
+        background-color: aqua;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.8s ease 0s;
+      }
+
+      button:hover {
+        background-color: antiquewhite;
+      }
+
+      .sticky {
+        background-color: blueviolet;
+      }
+
+      .sticky h1 {
+        color: black;
+      }
+
+      .sticky a {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>LOGO</h1>
+      <nav>
+        <ul>
+          <li><a class="nav_links" href="#">Home</a></li>
+          <li><a class="nav_links" href="#">About</a></li>
+          <li><a class="nav_links" href="#">Services</a></li>
+        </ul>
+      </nav>
+      <a href="#"><button>Contact</button></a>
+    </header>
+  </body>
+</html>
+
+<script>
+  window.addEventListener("scroll", function () {
+    let header = document.querySelector("header");
+    header.classList.toggle("sticky", window.scrollY > 0);
+  });
+</script>

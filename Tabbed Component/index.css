@@ -6,8 +6,10 @@
 }
 
 .tabs{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
+    display: flex;
+    overflow-x: scroll;
+    justify-content: space-around;
+   
 }
 
 h3{
