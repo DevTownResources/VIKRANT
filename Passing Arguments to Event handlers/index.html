@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pass arguments to event handlers</title>
+    <style>
+      button {
+        padding: 10px;
+        font-size: 40px;
+        font-weight: 500;
+        background-color: beige;
+        color: black;
+        border-radius: 20px;
+        margin: 50px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">OPEN</button>
+  </body>
+</html>
+<script>
+  document.getElementById("btn").addEventListener("click", (event) => {
+    let b = "Devtown";
+    changeContent(event, b);
+  });
+
+  function changeContent(e, b) {
+    console.log(e, b);
+    //console.log("hello");
+
+    let a = document.getElementById("btn");
+
+    if (a.innerHTML == "OPEN") {
+      a.innerHTML = "CLOSE";
+    } else {
+      a.innerHTML = "OPEN";
+    }
+  }
+</script>
