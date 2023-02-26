@@ -8,12 +8,45 @@
   </head>
   <body>
     <div id="container">
-      <div class="one">ONE</div>
-      <div class="two">TWO</div>
+      <h1>Hello</h1>
+      <h1>Man</h1>
+      <h1>I am John</h1>
+      <!-- jkh -->
+      <ul>
+        <li>I</li>
+        <li>am</li>
+        <li>following</li>
+        <li>my Dreams</li>
+      </ul>
     </div>
   </body>
 </html>
+
 <script>
-  let a = document.getElementById("container").firstChild;
-  console.log(a);
+  let container = document.getElementById("container");
+  // console.log(container);
+  // console.log(container.childNodes);
+  // console.log(container.children);
+
+  let a = container.childNodes;
+  let b = container.children;
+  // console.log(a[7].nodeType);
+
+  //1 Element
+  //2 Attributes
+  //3 Text Node
+  //8 comment
+  //9 document
+  //10 doctype
+
+  // console.log(a[9].children);
+  // console.log(a[0].nextSibling.nextSibling);
+  //firstElementChild
+  //firstChildNode
+
+  // console.log(a[1].parentNode);
+  // console.log(b[3].lastElementChild);
+
+  let c = document.querySelector("li").parentNode.parentNode;
+  console.log(c);
 </script>
