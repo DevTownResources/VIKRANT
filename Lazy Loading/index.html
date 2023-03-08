@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lazy Loading</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <style></style>
+  </head>
+  <body>
+    <h1>Revealing Elements on Scroll</h1>
+    <h3>Title of First Section</h3>
+    <div class="box1">
+      <section>
+        <h4>title1</h4>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt
+          natus dicta ratione, quo nobis amet, quasi aliquid vitae odit tempore
+          nostrum soluta nisi asperiores, illum repellendus ducimus! Delectus,
+          optio quasi.
+        </p>
+      </section>
+      <section>
+        <h4>title1</h4>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt
+          natus dicta ratione, quo nobis amet, quasi aliquid vitae odit tempore
+          nostrum soluta nisi asperiores, illum repellendus ducimus! Delectus,
+          optio quasi.
+        </p>
+      </section>
+      <section>
+        <h4>title1</h4>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt
+          natus dicta ratione, quo nobis amet, quasi aliquid vitae odit tempore
+          nostrum soluta nisi asperiores, illum repellendus ducimus! Delectus,
+          optio quasi.
+        </p>
+      </section>
+    </div>
+
+    <h3>Title for section 2</h3>
+    <div class="box2">
+      <section>
+        <h4>title1</h4>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt
+          natus dicta ratione, quo nobis amet, quasi aliquid vitae odit tempore
+          nostrum soluta nisi asperiores, illum repellendus ducimus! Delectus,
+          optio quasi.
+        </p>
+      </section>
+      <section>
+        <h4>title2</h4>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt
+          natus dicta ratione, quo nobis amet, quasi aliquid vitae odit tempore
+          nostrum soluta nisi asperiores, illum repellendus ducimus! Delectus,
+          optio quasi.
+        </p>
+      </section>
+      <section>
+        <h4>title3</h4>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt
+          natus dicta ratione, quo nobis amet, quasi aliquid vitae odit tempore
+          nostrum soluta nisi asperiores, illum repellendus ducimus! Delectus,
+          optio quasi.
+        </p>
+      </section>
+    </div>
+
+    <div style="display: flex; justify-content: space-around">
+      <div>
+        <img
+          style="height: 400px; width: 350px"
+          src="./lowquality.jpg"
+          data-src="./digital.jpg"
+          alt="image"
+        />
+      </div>
+      <div
+        style="
+          font-size: 40px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        Door
+      </div>
+    </div>
+    <!-- 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        threeshold: 300,
+      });
+    </script> -->
+  </body>
+</html>
+<script>
+  let target = document.querySelector("img[data-src]");
+  console.log(target);
+
+  const loadImg = function (entry, observer) {
+    if (entry[0].isIntersecting) {
+      entry[0].target.src = entry[0].target.dataset.src;
+    } else {
+      return;
+    }
+  };
+
+  const imgObserver = new IntersectionObserver(loadImg, {
+    threshold: 0,
+    root: null,
+  });
+
+  imgObserver.observe(target);
+</script>
