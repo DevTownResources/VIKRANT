@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0%;
+        padding: 0%;
+      }
+
+      body {
+        display: grid;
+        width: 100%;
+        height: 100vh;
+      }
+
+      .slider {
+        width: 60%;
+        height: 600px;
+        margin: auto;
+      }
+      /* 
+      .slider {
+        width: 60%;
+        height: 600px;
+        margin: auto;
+        background-image: url("./images/one.jpg");
+        background-size: 100% 100%;
+        animation: changepic 20s ease-in-out infinite;
+      } */
+      /* @keyframes changepic {
+        0% {
+          background-image: url("./images/one.jpg");
+        }
+
+        25% {
+          background-image: url("./images/two.jpg");
+        }
+        50% {
+          background-image: url("./images/three.jpg");
+        }
+        100% {
+          background-image: url("./images/four.jpg");
+        }
+      } */
+
+      #slide {
+        height: 600px;
+        width: 60%;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider">
+      <img src="./images/one.jpg" alt="" id="slide" />
+    </div>
+  </body>
+</html>
+<script>
+  let img_arr = [
+    "./images/one.jpg",
+    "./images/two.jpg",
+    "./images/three.jpg",
+    "./images/four.jpg",
+  ];
+
+  let i = 0;
+  const img = () => {
+    document.getElementById("slide").src = img_arr[i];
+    if (i < img_arr.length - 1) {
+      i++;
+    } else {
+      i = 0;
+    }
+  };
+
+  setInterval(img, 2000);
+</script>

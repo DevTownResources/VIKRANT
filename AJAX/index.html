@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Country</title>
+  </head>
+  <body>
+    <button onclick="showcountries()">Show Countries</button>
+    <div id="feed"></div>
+  </body>
+</html>
+<script>
+  //http get, post, delete, update ,put
+
+  function showcountries() {
+    console.log("running");
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://restcountries.com/v3.1/all", true);
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        let countries = JSON.parse(this.response);
+        console.log(countries);
+        countries.forEach((country) => {
+          let box = document.createElement("div");
+          box.innerHTML = country.name.common;
+          let Image = document.createElement("img");
+          Image.src = country.flags.png;
+          document.getElementById("feed").append(box, Image);
+        });
+      } else {
+        console.log("failure");
+      }
+      //   console.log(xhr.status);
+    };
+
+    xhr.send();
+  }
+</script>
